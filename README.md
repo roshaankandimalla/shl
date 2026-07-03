@@ -1,3 +1,13 @@
+---
+title: SHL Assessment Recommender
+emoji: 🧠
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # SHL Assessment Recommender
 
 Conversational FastAPI service for recommending SHL assessments from the provided catalog.
