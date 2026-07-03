@@ -1,0 +1,66 @@
+# Python/runtime
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Virtual environments
+.venv/
+venv/
+env/
+.conda/
+conda-meta/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs and OS/editor noise
+*.log
+logs/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build/package outputs
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Local notebooks and scratch files
+.ipynb_checkpoints/
+scratch/
+tmp/
+temp/
+
+# Local generated databases and resumable caches
+data/chroma/
+data/processed/*_cache.jsonl
+data/processed/query_embeddings_cache.json
+data/eval/results*.json
+
+# Local model/tool caches
+.cache/
+.chromadb/
+
+# Keep these project data artifacts versionable for deployment:
+# data/raw/shl_product_catalog.json
+# data/processed/assessment_documents.json
+# data/processed/dense_embeddings.npy
+# data/processed/dense_embeddings_meta.json
+# data/processed/splade_sparse_vectors.json
+# data/eval/questions.json

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "java_backend_mid",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I am hiring a mid-level Java backend developer who works with stakeholders. Recommend SHL assessments."
+      }
+    ],
+    "expectation": "recommendations"
+  },
+  {
+    "id": "vague_clarify",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I need an assessment"
+      }
+    ],
+    "expectation": "clarification"
+  },
+  {
+    "id": "two_turn_seniority",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hiring a Java developer who works with stakeholders"
+      },
+      {
+        "role": "assistant",
+        "content": "Sure. What seniority level or years of experience should the assessment target?"
+      },
+      {
+        "role": "user",
+        "content": "Mid-level, around 4 years"
+      }
+    ],
+    "expectation": "recommendations"
+  },
+  {
+    "id": "refine_personality",
+    "messages": [
+      {
+        "role": "user",
+        "content": "I am hiring a mid-level Java backend developer who works with stakeholders. Recommend SHL assessments."
+      },
+      {
+        "role": "assistant",
+        "content": "Here are 10 SHL assessments that best match the role and constraints you shared."
+      },
+      {
+        "role": "user",
+        "content": "Actually, add personality tests too."
+      }
+    ],
+    "expectation": "recommendations"
+  },
+  {
+    "id": "compare_opq_gsa",
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the difference between OPQ and GSA?"
+      }
+    ],
+    "expectation": "comparison"
+  },
+  {
+    "id": "off_topic_refusal",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Give me legal advice about terminating an employee."
+      }
+    ],
+    "expectation": "refusal"
+  }
+]

@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.git/
+.venv/
+venv/
+env/
+.conda/
+data/chroma/
+data/processed/*_cache.jsonl
+data/processed/query_embeddings_cache.json
+data/eval/results*.json
