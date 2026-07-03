@@ -64,3 +64,5 @@ data/eval/results*.json
 # data/processed/dense_embeddings_meta.json
 # data/processed/splade_sparse_vectors.json
 # data/eval/questions.json
+
+Agents.md
