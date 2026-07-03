@@ -23,7 +23,12 @@ SKILL_PATTERN = re.compile(
 COMPARE_PATTERN = re.compile(r"\b(compare|difference|different|versus|vs\.?|between)\b", re.IGNORECASE)
 
 REFINE_PATTERN = re.compile(
-    r"\b(actually|add|include|also|instead|remove|exclude|personality|cognitive|ability|aptitude|skills?|knowledge)\b",
+    r"\b(actually|add|include|also|instead|remove|exclude|drop|personality|cognitive|ability|aptitude|skills?|knowledge)\b",
+    re.IGNORECASE,
+)
+
+CONFIRM_PATTERN = re.compile(
+    r"\b(perfect|confirmed|confirm|that works|that's good|that is good|works for us|locking it in|lock it in|keep the shortlist|keep .* as-is|final list|that covers it|thanks|thank you)\b",
     re.IGNORECASE,
 )
 
@@ -65,6 +70,10 @@ class ChatController:
     def is_refinement(self, latest_user: str, messages: list[Message]) -> bool:
         has_prior_assistant = any(message.role == "assistant" for message in messages[:-1])
         return has_prior_assistant and bool(REFINE_PATTERN.search(latest_user))
+
+    def is_confirmation(self, latest_user: str, messages: list[Message]) -> bool:
+        has_prior_assistant = any(message.role == "assistant" for message in messages[:-1])
+        return has_prior_assistant and bool(CONFIRM_PATTERN.search(latest_user))
 
     def is_out_of_scope(self, latest_user: str, messages: list[Message]) -> bool:
         if PROMPT_ATTACK_PATTERN.search(latest_user):
@@ -169,5 +178,5 @@ class ChatController:
                 refined=self.is_refinement(latest_user, messages),
             ),
             recommendations=recommendations,
-            end_of_conversation=False,
+            end_of_conversation=self.is_confirmation(latest_user, messages),
         )
